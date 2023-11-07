@@ -1,0 +1,49 @@
+github -> tempat penyimpanan hasil coding kita (repository)
+untuk :
+1. backup --> misal ganti laptop, jadi hasil codingan sblmnya tidak terhapus
+2. transfer --> untuk mengirim codingan bila dibutuhkan
+3. collab --> mengerjakan project bersama-sama, jadi semua bisa mengerjakan dgn mengetahui codingan teammates nya
+4. tracking history --> kl ada perubahan, bisa ketrack
+    contoh : 
+    si A mengerjakan bagian produk
+    si B mengerjakan transaksi
+    lalu kerjaan A dan B mau digabungkan, dengan cara kolaborasi -> dengan menggunakan repository, 
+    repository yg sama meskipun kerjaannya beda (spt drive.google)
+
+istilah :
+1. repository -> tempat penyimpanan 
+    a. online (tersimpan di github)
+    b. local
+2. commit -> persetujuan perubahan (yg awalnya local), dengan isi sumarize perubahan yg dilakukan
+3. push -> mengirimkan hasil commit menuju repository online, atau nge-sync
+4. fetch -> menarik data, misal di online ada update, jadi lokal kita ketinggalan dari online
+         -> ngecek repository online dan dibandingkan dgn local, menunjukkan perubahan yg trjadi di online
+5. pull -> menarik data online supaya sama dgn local, atau nge-sync 
+6. fork -> clone repository org lain supaya masuk ke repository kita
+        -> cth: udin buat codingan ttg bikin video player u/ youtube, 
+           lalu ujang bilang : codingan lo ada yg ngebug
+           udin : bug gmna?
+           ujang : video ga keplay kl pake 3gp
+           udin : ooh gue udh ga cek repo ini lagi
+           ujang : oh yauda gue perbaikin aja, nanti lu tunggu hasil perbaikannya
+           maka ujang akan nge fork repo udin, dan buat perubahan, lalu dia push
+           changes => push => repo milik ujang
+           repo milik udin ttp ngebug
+7. pull request -> meminta orifin repo untuk menarik perubahan (repo)
+                -> meminta tolong untuk ditarik, yaitu perubahan yg udh dibuat ujang ke repo udin
+                -> yg di pull request adalah hasil commit
+8. branch -> dalam satu repo bisa punya banyak cabang
+          -> cth : ada repo system mcd yg dikerjakan oleh a dan b 
+             branch 1 : isinya production -> cabang yg isinya = website yg sedang live, atau less bug/optimize (krn sistem udh live, udh dipake orgorg)
+             branch 2 : misal kita mau nambahin fitur baru, cth fitur delivery onlibe
+                      : isinya development -> cabang yg difunakan untuk mengerjakan fitur
+             branch 3 : isinya testing
+                      : yg dikerjakan ada banyak, cth :
+                        a. bagian produk -> oleh a (development)
+                        b. bagian transaksi -> oleh b (development)
+                      : lalu A akan buat branch baru based on fitur yg dikerjakan yaitu bikin produk -> kl udh selesai di pull request & merged -> ke development
+                        serta B bikin branch baru jg yaitu bikin transaksi -> kl udh selesai di pull request & merged -> ke development
+                      : C adalah tester, 
+                        akan ada server yg melakukan deployment thd branch testing, contoh testing.mcd.com u/ makesure yg dikerjakan A dan B udh betul
+                        kl udh betul, akan PR & merged dari testing -> ke production
+                        lalu ada maintenance sementara->untuk update fitur terbaru atau bug
